@@ -10,3 +10,5 @@ insecure
 coffeescript
 materialize:materialize
 fourseven:scss
+accounts-password
+cmather:iron-router
