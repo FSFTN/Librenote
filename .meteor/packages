@@ -8,3 +8,5 @@ meteor-platform
 autopublish
 insecure
 coffeescript
+materialize:materialize
+fourseven:scss
