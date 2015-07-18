@@ -11,4 +11,4 @@ coffeescript
 materialize:materialize
 fourseven:scss
 accounts-password
-cmather:iron-router
+iron:router
