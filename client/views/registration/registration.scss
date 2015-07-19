@@ -1,0 +1,73 @@
+
+.login-container, .signup-container{
+  margin-top: 4%;
+  .login-form, .signup-form{
+    padding: 10px 40px;
+  }
+  label{
+    &:before{
+      border-color: #4db6ac;
+    }
+  }
+  .btn{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+  }
+  .social-btn{
+    a{
+      width: 100%;
+      color: #fff;
+      font-size: 18px;
+      &:hover{
+        opacity: 0.9;
+      }
+    }
+  }
+  .facebook-btn{
+    background-color: #3b5998;
+  }
+  .google-btn{
+    background-color: #dd4b39;
+  }
+  .github-btn{
+    background-color: #333;
+  }
+  .register-forgot{
+    a{
+      color: teal;
+      &:hover{
+        opacity: 0.9;
+
+      }
+    }
+  }
+}
+.forgot-pwd{
+  margin-top: 4%;
+}
+#login-modal{
+  max-height: 80%;
+  width: 40%;
+  .modal-close{
+    position: absolute;
+    color: #bbb;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+  }
+  .login-container,.signup-container{
+    margin: 0px;
+  }
+  .modal-content{
+    padding: 0px;
+  }
+  .signup-container{
+    display: none;
+  }
+}
+@media only screen and (max-width: 992px){
+  #login-modal {
+    width: 80%;
+  }
+}
