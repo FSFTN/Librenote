@@ -4,7 +4,7 @@
   box-shadow: 0 2px 1px rgba(0,0,0,0.08);
   -webkit-box-shadow: 0 2px 1px rgba(0,0,0,0.08);
   word-wrap: break-word;
-  word-break: break-all;
+  word-break: break-word;
   min-height: 120px;
   padding: 0px !important;
   &:hover{
@@ -36,7 +36,7 @@
   }
   .note-content{
     padding: 12px 15px 15px 12px;
-    font-size: 36px;
+    font-size: 16px;
     font-weight: 100;
     line-height: 48px;
     min-height: 30px;
