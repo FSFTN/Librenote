@@ -13,3 +13,5 @@ fourseven:scss
 accounts-password
 iron:router
 fortawesome:fontawesome
+service-configuration
+accounts-github
