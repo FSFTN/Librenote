@@ -1,12 +1,11 @@
 Template.newNote.events
   "click .note-placeholder":(e,t) ->
-    e.preventDefault()
     t.$('.note-placeholder').hide()
     t.$('.note-inner').show()
     t.$('#text-note').focus()
 
   "input #text-note, blur #text-note": (e,t)->
-    text = $('#text-note').text().trim()
+    text = t.$('#text-note').text().trim()
     if text isnt ""
       t.$('.text-placeholder').hide()
     else
@@ -15,6 +14,22 @@ Template.newNote.events
   "click .text-placeholder": (e,t)->
     t.$('.text-placeholder').hide()
     t.$('#text-note').focus()
+
+  "click .btn-done":(e,t)->
+    title = t.$('#title').val().trim()
+    content = $('#text-note').text().trim()
+    console.log title
+    console.log content
+    Notes.insert
+      title: title
+      content: content
+      type: "text"
+      date: Date.now()
+      owner: "Anonymous dude"
+    t.$('#title').val('')
+    $('#text-note').text('')
+    t.$('.text-placeholder').show()
+
 
 
 

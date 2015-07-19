@@ -1,5 +1,13 @@
 /* CSS declarations go here */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,500,700italic,700,500italic,300italic);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
 body{
   background-color: #E8E8E8;
   color: #333;
+  font-family: 'Roboto', sans-serif;
 }
+.list-container{
+  width: 95%;
+  font-family: 'Roboto Slab', serif;
+}
+

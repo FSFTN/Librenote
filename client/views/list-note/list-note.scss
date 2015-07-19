@@ -1,0 +1,23 @@
+.note-block{
+  margin: 0.8rem 1.66667% !important;
+  border-radius: 0px;
+  box-shadow: 0 2px 1px rgba(0,0,0,0.08);
+  -webkit-box-shadow: 0 2px 1px rgba(0,0,0,0.08);
+  word-wrap: break-word;
+  word-break: break-all;
+  .note-title{
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 23px;
+    min-height: 38px;
+    padding: 10px 15px 0 15px;
+  }
+  .note-content{
+    padding: 12px 15px 15px 12px;
+    font-size: 36px;
+    font-weight: 100;
+    line-height: 48px;
+    min-height: 30px;
+    color: rgba(0,0,0,0.6)
+  }
+}
