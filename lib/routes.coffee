@@ -4,6 +4,16 @@ Router.configure
   notFoundTemplate: 'notFound',
 
 
+Router.onBeforeAction ()->
+  if !Meteor.userId()
+    Router.go 'signin'
+    @render 'signin'
+  else
+    @next()
+ ,
+  except: ['signup']
+
+
 Router.route '/', ->
   @render 'home'
 
@@ -12,3 +22,4 @@ Router.route '/signin', ->
 
 Router.route '/signup', ->
   @render 'signup'
+
