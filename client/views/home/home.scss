@@ -1,0 +1,17 @@
+/* CSS declarations go here */
+body{
+  background-color: #E8E8E8;
+}
+.search-container{
+  color: rgba(0,0,0,0.5);
+  .card{
+    border-radius: 0px;
+  }
+  i{
+    font-size: 1.2rem;
+  }
+}
+.note-placeholder{
+  font-size: 14px;
+  padding: 4px 10px 0px 10px;
+}

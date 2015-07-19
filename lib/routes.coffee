@@ -6,3 +6,9 @@ Router.configure
 
 Router.route '/', ->
   @render 'home'
+
+Router.route '/signin', ->
+  @render 'signin'
+
+Router.route '/signup', ->
+  @render 'signup'
