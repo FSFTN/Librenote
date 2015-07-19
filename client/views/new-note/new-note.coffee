@@ -18,17 +18,17 @@ Template.newNote.events
   "click .btn-done":(e,t)->
     title = t.$('#title').val().trim()
     content = $('#text-note').text().trim()
-    console.log title
-    console.log content
-    Notes.insert
-      title: title
-      content: content
-      type: "text"
-      date: Date.now()
-      owner: "Anonymous dude"
-    t.$('#title').val('')
-    $('#text-note').text('')
-    t.$('.text-placeholder').show()
+    if title or content
+      Notes.insert
+        title: title
+        content: content
+        type: "text"
+        trash: false
+        date: Date.now()
+        owner: "Anonymous dude"
+      t.$('#title').val('')
+      $('#text-note').text('')
+      t.$('.text-placeholder').show()
 
 
 
