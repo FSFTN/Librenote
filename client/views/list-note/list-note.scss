@@ -5,6 +5,28 @@
   -webkit-box-shadow: 0 2px 1px rgba(0,0,0,0.08);
   word-wrap: break-word;
   word-break: break-all;
+  min-height: 120px;
+  padding: 0px !important;
+  &:hover{
+    -webkit-box-shadow: 0 2px 15px rgba(0,0,0,0.30);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.30);
+    .note-options{
+      background-color:#C0C0C0;
+      webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 4px 0;
+      -webkit-transition-duration: .500s;
+      transition-duration: .500s;
+      -webkit-transition-property: opacity;
+      transition-property: opacity;
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in;
+      padding: 10px 15px;
+      a{
+        display: block;
+      }
+    }
+  }
   .note-title{
     font-size: 17px;
     font-weight: bold;
@@ -19,5 +41,22 @@
     line-height: 48px;
     min-height: 30px;
     color: rgba(0,0,0,0.6)
+  }
+  .note-options{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 0px;
+    color: transparent;
+    background-color: transparent;
+    a{
+      display: none;
+      i{
+        color: rgba(255,255,255,1);
+        font-size: 1.4rem;
+      }
+      &:hover{
+        opacity: 0.8;
+      }
+    }
   }
 }
