@@ -23,3 +23,5 @@ Router.route '/signin', ->
 Router.route '/signup', ->
   @render 'signup'
 
+Router.route '/trash', ->
+  @render 'trash'
