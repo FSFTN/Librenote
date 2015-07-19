@@ -1,0 +1,23 @@
+<template name="newNote">
+  <div class="row note-container">
+    <div class="col s5 card">
+      <div class="new-note-container">
+        <p  class="note-placeholder">
+          Add Note
+          <i class="right fa fa-th-list"></i>
+        </p>
+        <div class="row note-inner">
+          <div class="input-field col s12">
+            <input placeholder="Title" id="title" type="text" class="validate">
+            <div class="text-placeholder">
+              Add Note
+            </div>
+            <div contenteditable="true" id="text-note"></div>
+
+          </div>
+            <a class="btn-flat waves-effect btn-done right"  href="#">Done</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

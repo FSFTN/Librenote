@@ -1,0 +1,50 @@
+.note-container{
+  .note-placeholder{
+    cursor: text;
+    color: rgba(0,0,0,0.5);
+    font-size: 14px;
+    padding: 4px 10px 0px 10px;
+  }
+  .note-inner{
+    display: none;
+    padding-bottom: 0px;
+    margin-bottom: 4px;
+  }
+  input[type=text]:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: none;
+    box-shadow: none;
+    margin-bottom: 0px;
+  }
+  #title{
+    color: #333; 
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .card{
+    border-radius: 0px;
+  }
+  i{
+    font-size: 1.2rem;
+    padding-right: 10px;
+  }
+  #text-note{
+    min-height: 40px;
+    z-index: 1;
+  }
+  .text-placeholder{
+    min-height: 40px;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  div[contenteditable=true]{
+    outline: none;
+  }
+  .btn-done{
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
+
