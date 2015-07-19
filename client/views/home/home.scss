@@ -6,8 +6,25 @@ body{
   color: #333;
   font-family: 'Roboto', sans-serif;
 }
+.main-container{
+  .side-nav{
+    top: 62px;
+  }
+}
 .list-container{
   width: 95%;
   font-family: 'Roboto Slab', serif;
 }
+.nav2{
+  position: fixed;
+  width: 100%;
+  top: 64px;
+  height: 45px;
+  line-height: 45px;
+}
 
+@media (max-width: 992px) { 
+  .nav2{
+    top: 0;
+    }
+}
