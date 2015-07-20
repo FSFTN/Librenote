@@ -25,7 +25,7 @@ Template.newNote.events
         type: "text"
         trash: false
         date: Date.now()
-        owner: Meteor.user().emails[0].address
+        owner: Meteor.userId()
       t.$('#title').val('')
       $('#text-note').text('')
       t.$('.text-placeholder').show()

@@ -4,7 +4,11 @@ Template.signin.events
       requestPermissions:["user"]
       requestOfflineToken:true
       , (error) ->
-        console.log error.reason if error
+        if error
+          console.log error.reason 
+        else
+          Router.go "/"
+
 
   "click #signin-btn": (e,t)->
     e.preventDefault()	
