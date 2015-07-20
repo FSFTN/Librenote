@@ -8,3 +8,7 @@ Template.listNote.events
     Notes.update({_id: @._id}, {$set: trash: true})
     Materialize.toast('Moved to Trash', 2000)
 
+  "click .note-block":(e,t)->
+    Session.set "editNote", @
+    $('#edit-modal').openModal()
+

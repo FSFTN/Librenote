@@ -1,0 +1,45 @@
+#edit-modal{
+  .modal-content{
+    padding: 0px;
+  }
+  .note-outer{
+  }
+  input[type=text]:not([readonly]){
+    border-bottom: none;
+    box-shadow: none;
+    margin-bottom: 0px;
+  }
+  #edit-note-content{
+    min-height: 100px;
+    outline: none;
+  }
+  #title{
+    color: #333; 
+    font-size: 15px;
+    font-weight: bold;
+    &::-webkit-input-placeholder {
+       color: #7F7F7F;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+       color: #7F7F7F;  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+       color: #7F7F7F;  
+    }
+
+    &:-ms-input-placeholder {  
+       color: #7F7F7F;  
+    }
+  }
+  .colors-container{
+    a{
+      margin-right: 5px;
+    }
+  }
+}
+#edit-modal.modal{
+  width: 40%;
+  top: 25% !important
+}
