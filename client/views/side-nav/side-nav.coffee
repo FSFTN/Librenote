@@ -1,6 +1,4 @@
 Session.setDefault "activeTemplate", "Note"
-Template.sideNav.onRendered ->
-  $(".button-collapse").sideNav()
 
 Template.sideNav.helpers
   activeTemplate: ->

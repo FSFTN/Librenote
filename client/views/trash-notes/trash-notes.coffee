@@ -7,4 +7,6 @@ Template.trash.events
     if confirm("Are you sure? You can not restore once deleted from trash")
       Notes.remove({_id: @._id})	
 
+  "click .btn-restore":(e,t) ->
+    Notes.update({_id: @._id}, {$set: {trash: false}})
 
