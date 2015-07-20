@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source config/development/env.sh
+meteor --settings config/settings.json
