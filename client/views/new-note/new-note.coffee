@@ -29,6 +29,7 @@ Template.newNote.events
         type: "text"
         color: Session.get "noteColor"
         trash: false
+        archive: false
         date: Date.now()
         owner: Meteor.userId()
       t.$('#title').val('')

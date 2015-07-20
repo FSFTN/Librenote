@@ -27,3 +27,7 @@ Router.route '/signup', ->
 Router.route '/trash', ->
   @render 'trash'
   @layout "applicationLayout"
+
+Router.route '/archive', ->
+  @render 'archive'
+  @layout "applicationLayout"

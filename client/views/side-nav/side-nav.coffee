@@ -2,22 +2,19 @@ Session.setDefault "activeTemplate", "Note"
 
 Template.sideNav.helpers
   activeTemplate: ->
-    temp = Session.get "activeTemplate"
-    temp.charAt(0).toUpperCase() + temp.slice(1)
+    Session.get "activeTemplate"
   navColor: ->
     temp = Session.get "activeTemplate"
     switch temp
-      when "note" then "yellow darken-2"
-      when "trash" then "grey darken-2"
+      when "Note" then "yellow darken-2"
+      when "Trash" then "grey darken-2"
+      when "Archive" then "teal"
       else "yellow darken-2"
 
 Template.sideNav.events
-  "click .sidenav-note":() ->
+  "click #slide-out a":(e,t) ->
     $('.button-collapse').sideNav('hide')
-    Session.set "activeTemplate", "note"
-
-  "click .sidenav-trash":() ->
-    $('.button-collapse').sideNav('hide')
-    Session.set "activeTemplate", "trash"
+    text =  $(e.currentTarget).text().trim()
+    Session.set "activeTemplate", text
 
 

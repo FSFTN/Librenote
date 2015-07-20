@@ -28,6 +28,12 @@
     color: #fff;
   }
 }
+.teal{
+  @extend .nav2;
+  a.button-collapse{
+    color: #fff;
+  }
+}
 
 @media (max-width: 992px) { 
   .nav2{
