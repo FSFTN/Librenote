@@ -1,0 +1,40 @@
+.nav2{
+  position: fixed;
+  width: 100%;
+  top: 64px;
+  height: 45px;
+  line-height: 45px;
+  a.button-collapse{
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    i{
+      margin-right: 10px;
+    }
+  }
+}
+.side-nav{
+  top: 65px;
+}
+.yellow{
+  @extend .nav2;
+  a.button-collapse{
+    color: #333;
+  }
+}
+.grey{
+  @extend .nav2;
+  a.button-collapse{
+    color: #fff;
+  }
+}
+
+@media (max-width: 992px) { 
+  .nav2{
+    top: 0;
+  }
+  .side-nav{
+    top: 0;
+  }
+}
+

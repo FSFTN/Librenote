@@ -1,6 +1,6 @@
 Template.listNote.helpers
   notes: ->
-    Notes.find({"trash": false})
+    Notes.find({"trash": false, "owner": Meteor.userId()})
 
 Template.listNote.events
   "click .btn-delete":(e,t) ->

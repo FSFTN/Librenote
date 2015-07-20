@@ -1,8 +1,6 @@
 Router.configure
-  layoutTemplate: 'applicationLayout',
   loadingTemplate: 'loading',
   notFoundTemplate: 'notFound',
-
 
 Router.onBeforeAction ()->
   if !Meteor.userId()
@@ -16,12 +14,16 @@ Router.onBeforeAction ()->
 
 Router.route '/', ->
   @render 'home'
+  @layout "applicationLayout"
 
 Router.route '/signin', ->
   @render 'signin'
+  @layout "registrationLayout"
 
 Router.route '/signup', ->
   @render 'signup'
+  @layout "registrationLayout"
 
 Router.route '/trash', ->
   @render 'trash'
+  @layout "applicationLayout"

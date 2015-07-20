@@ -29,6 +29,8 @@ Template.newNote.events
       t.$('#title').val('')
       $('#text-note').text('')
       t.$('.text-placeholder').show()
+      t.$('.note-inner').hide()
+      t.$('.note-placeholder').show()
 
 
 
