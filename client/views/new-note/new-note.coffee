@@ -1,3 +1,7 @@
+Template.newNote.helpers
+  noteColor: ->
+    Session.get "noteColor"
+
 Template.newNote.events
   "click .note-placeholder":(e,t) ->
     t.$('.note-placeholder').hide()
@@ -23,6 +27,7 @@ Template.newNote.events
         title: title
         content: content
         type: "text"
+        color: Session.get "noteColor"
         trash: false
         date: Date.now()
         owner: Meteor.userId()
@@ -31,7 +36,10 @@ Template.newNote.events
       t.$('.text-placeholder').show()
       t.$('.note-inner').hide()
       t.$('.note-placeholder').show()
+      Session.set "noteColor", ""
 
-
+  "click .colors-container a":(e,t)->
+    color = $(e.currentTarget).attr('data-color').trim()
+    Session.set "noteColor", color
 
 

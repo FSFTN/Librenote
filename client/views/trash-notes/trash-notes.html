@@ -1,5 +1,14 @@
 <template name="trash">
   <div class="main-container">
+    <div class="row">
+      <p class="center-align">
+        {{#if noteCount}}
+        <a href="#" class="btn-flat btn-delete-all waves-effect">Empty the trash</a>
+        {{else}}
+        <a href="#" class="btn-flat waves-effect">Trash is empty </a>
+        {{/if}}
+      </p>
+    </div>
     <div class="row trash-list">
       {{#each notes}}
       <div class="card col s10 m4 l2 note-block">

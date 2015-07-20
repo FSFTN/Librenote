@@ -12,6 +12,7 @@ Router.onBeforeAction ()->
   except: ['signup']
 
 Router.route '/', ->
+  name: 'home'
   @render 'home'
   @layout "applicationLayout"
 

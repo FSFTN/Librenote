@@ -21,8 +21,22 @@
     color: #333; 
     font-size: 15px;
     font-weight: bold;
-  }
+    &::-webkit-input-placeholder {
+       color: #7F7F7F;
+    }
 
+    &:-moz-placeholder { /* Firefox 18- */
+       color: #7F7F7F;  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+       color: #7F7F7F;  
+    }
+
+    &:-ms-input-placeholder {  
+       color: #7F7F7F;  
+    }
+  }
   .card{
     border-radius: 0px;
   }
@@ -47,6 +61,13 @@
     color: #333;
     font-size: 13px;
     font-weight: 500;
+  }
+  .colors-container{
+    a{
+      i{
+        font-size: 1.5rem;
+      }
+    }
   }
 }
 
