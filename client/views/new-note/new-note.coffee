@@ -2,26 +2,29 @@ Template.newNote.helpers
   noteColor: ->
     Session.get "noteColor"
 
+  isAddingNote: ->
+    Session.get "isAddingNote"
+
 Template.newNote.events
   "click .note-placeholder":(e,t) ->
-    t.$('.note-placeholder').hide()
-    t.$('.note-inner').show()
+    Session.set "isAddingNote", true
+    Meteor.setTimeout(->
+      $('#text-note').focus()
+    )
+
+  "click .text-placeholder": (e,t)->
     t.$('#text-note').focus()
 
   "input #text-note, blur #text-note": (e,t)->
     text = t.$('#text-note').text().trim()
-    if text isnt ""
-      t.$('.text-placeholder').hide()
+    if text is ""
+      t.$('.text-placeholder').show()
     else
-      $('.text-placeholder').show()
-
-  "click .text-placeholder": (e,t)->
-    t.$('.text-placeholder').hide()
-    t.$('#text-note').focus()
+      t.$('.text-placeholder').hide()
 
   "click .btn-done":(e,t)->
     title = t.$('#title').val().trim()
-    content = $('#text-note').text().trim()
+    content = t.$('#text-note').text().trim()
     if title or content
       Notes.insert
         title: title
@@ -32,12 +35,8 @@ Template.newNote.events
         archive: false
         date: Date.now()
         owner: Meteor.userId()
-      t.$('#title').val('')
-      $('#text-note').text('')
-      t.$('.text-placeholder').show()
-      t.$('.note-inner').hide()
-      t.$('.note-placeholder').show()
-      Session.set "noteColor", ""
+      Session.set "noteColor", "white"
+      Session.set "isAddingNote", false
 
   "click .colors-container a":(e,t)->
     color = $(e.currentTarget).attr('data-color').trim()

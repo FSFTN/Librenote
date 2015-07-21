@@ -6,9 +6,9 @@
     color: rgba(0,0,0,0.5);
     font-size: 14px;
     padding: 4px 10px 0px 10px;
+    margin-bottom: 6px;
   }
   .note-inner{
-    display: none;
     padding-bottom: 0px;
     margin-bottom: 4px;
   }
@@ -61,11 +61,15 @@
     color: #333;
     font-size: 13px;
     font-weight: 500;
+    padding-right: 0px;
   }
   .colors-container{
     a{
       i{
         font-size: 1.5rem;
+      }
+      &:hover{
+        opacity: 0.7;
       }
     }
   }
