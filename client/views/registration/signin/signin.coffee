@@ -17,11 +17,13 @@ Template.signin.events
     if email and password
       Meteor.loginWithPassword(email,password,(error)->
         if error
-          console.log error
+          Materialize.toast(error.reason, 2000)
         else
           Router.go "/"
          
-    )
+      )
+    else
+      Materialize.toast('Email / Password may not be empty', 2000)
 
   "keypress #signin-email, keypress #signin-password": (e,t)->
     email = t.$("#signin-email").val()

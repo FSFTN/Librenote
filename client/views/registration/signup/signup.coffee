@@ -14,14 +14,20 @@ Template.signup.events
     email = t.$("#email").val()
     password = t.$("#password").val()
     password2 = t.$("#confirm-password").val()
-    if email isnt "" and password is password2
+    re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+    if email is "" or re.test(email) is false
+      Materialize.toast('Please provide a valid email address', 1500)
+    else if password isnt password2
+      Materialize.toast('Password does not match', 1500)
+    else
       Accounts.createUser({email: email,password: password},(error,response)->
         if error
-          console.log error
+          Materialize.toast(error.reason, 1500)
         else
           Router.go "/"
          
-    )
+      )
+
 
   "keypress #email, keypress #confirm-password": (e,t)->
     email = t.$("email").val()
