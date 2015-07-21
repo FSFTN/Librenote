@@ -1,6 +1,6 @@
 Template.archive.helpers
   notes: ->
-    Notes.find({archive: true, owner: Meteor.userId(), trash: false})
+    Notes.find({archive: true, owner: Meteor.userId(), trash: false},{sort: {createdAt: -1} })
 
 
 Template.archive.events

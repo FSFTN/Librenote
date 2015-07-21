@@ -11,11 +11,8 @@ Template.editNote.events
       data = {
         title: title
         content: content
-        type: "text"
         color: currentData.color
-        trash: false
-        date: Date.now()
-        owner: Meteor.userId()
+        lastModified: Date.now()
       }
       Notes.update({_id: @._id}, {$set: data})
       $('#edit-modal').closeModal()

@@ -1,6 +1,6 @@
 Template.trash.helpers
   notes: ->
-    Notes.find({trash: true, owner: Meteor.userId(), archive: false})
+    Notes.find({trash: true, owner: Meteor.userId(), archive: false}, {sort: {createdAt: -1}})
 
   noteCount: ->
     count = Notes.find({"trash": true, "owner": Meteor.userId()}).count()

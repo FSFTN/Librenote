@@ -9,7 +9,7 @@ Template.newNote.events
   "click .note-placeholder":(e,t) ->
     Session.set "isAddingNote", true
     Meteor.setTimeout(->
-      $('#text-note').focus()
+     t.$('#text-note').focus()
     )
 
   "click .text-placeholder": (e,t)->
@@ -33,7 +33,8 @@ Template.newNote.events
         color: Session.get "noteColor"
         trash: false
         archive: false
-        date: Date.now()
+        createdAt: Date.now()
+        lastModified: Date.now()
         owner: Meteor.userId()
       Session.set "noteColor", "white"
       Session.set "isAddingNote", false
@@ -41,5 +42,6 @@ Template.newNote.events
   "click .colors-container a":(e,t)->
     color = $(e.currentTarget).attr('data-color').trim()
     Session.set "noteColor", color
+
 
 

@@ -61,7 +61,7 @@
     color: #333;
     font-size: 13px;
     font-weight: 500;
-    padding-right: 0px;
+    padding: 5px;
   }
   .colors-container{
     a{
@@ -75,3 +75,8 @@
   }
 }
 
+@media (max-width: 720px) { 
+  .note-container{
+    width: 90%;
+  }
+}
