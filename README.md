@@ -4,7 +4,8 @@ Free(as in freedom) alternative for [google keep](https://keep.google.com/)
 ![alt tag](https://raw.githubusercontent.com/rajanand02/librenote/master/public/images/LibreNote.png)
 
 ##Contribution
-To contribute please follow these steps
+#####To contribute please follow these steps
+
 1. Fork the repo
 2. Branch into a feature branch `feature/you_feature`
 3. Write clear [commit messages](https://github.com/erlang/otp/wiki/Writing-good-commit-messages)
