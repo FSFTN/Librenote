@@ -1,5 +1,5 @@
 # librenote
-Free(as in freedom) alternative for [google keep](https://keep.google.com/)
+Free(as in freedom) alternative for [Google Keep](https://keep.google.com/)
 
 ![alt tag](https://raw.githubusercontent.com/rajanand02/librenote/master/public/images/LibreNote.png)
 
@@ -21,7 +21,7 @@ For more detailed instructions please refer [guide.](https://github.com/FSFTN/li
 
 ## License
 
-LibreNote is released Under GPLv3 and made with [Meteor](www.meteor.com)
+LibreNote is released Under GPLv3 and made with [Meteor](https://www.meteor.com)
 
 ###Note
 
