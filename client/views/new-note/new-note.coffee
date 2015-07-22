@@ -38,6 +38,8 @@ Template.newNote.events
         owner: Meteor.userId()
       Session.set "noteColor", "white"
       Session.set "isAddingNote", false
+    else
+      Materialize.toast("Title or Content may not be empty", 1500)
 
   "click .colors-container a":(e,t)->
     color = $(e.currentTarget).attr('data-color').trim()
