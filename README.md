@@ -16,6 +16,8 @@ Free(as in freedom) alternative for [google keep](https://keep.google.com/)
 1. https://github.com/Meteor-Chennai/Meteor-Learning
 2. https://www.yauh.de/best-learning-resources-for-meteorjs/
 
+### Guides
+For more detailed instructions please refer [guide.](https://github.com/FSFTN/librenote/wiki/Guide)
 
 ## License
 
