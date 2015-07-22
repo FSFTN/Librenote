@@ -11,14 +11,24 @@ Router.onBeforeAction ()->
  ,
   except: ['signup']
 
+SigninController = RouteController.extend
+  onRun: () ->
+    if Accounts._resetPasswordToken
+      Session.set 'resetToken', Accounts._resetPasswordToken
+    @next()
+  
+
+  
 Router.route '/', ->
   name: 'home'
   @render 'home'
   @layout "applicationLayout"
 
-Router.route '/signin', ->
-  @render 'signin'
-  @layout "registrationLayout"
+Router.route '/signin',
+  name: 'signin'
+  template: 'signin'
+  layout: 'registrationLayout'
+  controller: SigninController
 
 Router.route '/signup', ->
   @render 'signup'
