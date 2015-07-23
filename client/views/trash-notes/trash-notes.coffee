@@ -1,6 +1,9 @@
 Template.trash.helpers
   notes: ->
-    Notes.find({trash: true, owner: Meteor.userId(), archive: false}, {sort: {createdAt: -1}})
+    if Session.get "searchValue" is ""
+      Notes.find({trash: true, owner: Meteor.userId(), archive: false}, {sort: {createdAt: -1}})
+    else
+      Notes.find({trash: true, archive: false}, { sort: [["score", "desc"]] })
 
   noteCount: ->
     count = Notes.find({"trash": true, "owner": Meteor.userId()}).count()

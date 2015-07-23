@@ -7,12 +7,12 @@ Schemas.Note = new SimpleSchema
     type: String
     max: 300
     optional: true
-    index: 1
+    #index: 1
   },
   content: {
     type: String
     optional: true
-    index: 1
+    #index: 1
   },
   type:{
     type: String

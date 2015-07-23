@@ -1,6 +1,9 @@
 Template.listNote.helpers
   notes: ->
-    Notes.find({trash: false, owner: Meteor.userId(), archive: false }, {sort: {createdAt: -1}})
+    if Session.get "searchValue" is ""
+      Notes.find({trash: false, owner: Meteor.userId(), archive: false }, {sort: {createdAt: -1}})
+    else
+      Notes.find({trash: false, archive: false}, { sort: [["score", "desc"]] })
 
 Template.listNote.events
   "click .btn-delete":(e,t) ->
