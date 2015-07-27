@@ -5,6 +5,9 @@ Template.newNote.helpers
   isAddingNote: ->
     Session.get "isAddingNote"
 
+  isAddingTodo: ->
+    Session.get "isAddingTodo"
+
 Template.newNote.events
   "click .note-placeholder":(e,t) ->
     Session.set "isAddingNote", true
@@ -22,14 +25,23 @@ Template.newNote.events
     else
       t.$('.text-placeholder').hide()
 
-  "click .btn-done":(e,t)->
+  "click #btn-done":(e,t)->
     title = t.$('#title').val().trim()
-    content = t.$('#text-note').text().trim()
-    if title or content
+    todo_status = Session.get "isAddingTodo"
+    if todo_status
+      content = ""
+      id = Session.get "activeNoteId"
+      type = "todo"
+    else
+      content = t.$('#text-note').text().trim()
+      id = new Mongo.ObjectID()._str
+      type = "text"
+    if title or content or todo_status
       Notes.insert
+        _id: id
         title: title
         content: content
-        type: "text"
+        type: type
         color: Session.get "noteColor"
         trash: false
         archive: false
@@ -37,6 +49,7 @@ Template.newNote.events
         owner: Meteor.userId()
       Session.set "noteColor", "white"
       Session.set "isAddingNote", false
+      Session.set "isAddingTodo", false
     else
       Materialize.toast("Title or Content may not be empty", 1500)
 
@@ -44,5 +57,16 @@ Template.newNote.events
     color = $(e.currentTarget).attr('data-color').trim()
     Session.set "noteColor", color
 
+  "click .show-new-todo":(e,t)->
+    e.stopPropagation()
+    noteId = new Mongo.ObjectID()._str
+    Session.set "isAddingTodo", true
+    Session.set "isAddingNote", true
+    Session.set "activeNoteId", noteId
 
+  "click #btn-back":()->
+    Session.set "isAddingTodo", false
+    Session.set "isAddingNote", false
+    Session.set "activeNoteId", ""
+    Session.set "noteColor", "white"
 

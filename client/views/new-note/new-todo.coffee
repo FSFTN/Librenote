@@ -20,7 +20,6 @@ Template.newTodo.events
     if e.which is 13
       title = t.$('#title').val().trim()
       noteId = Session.get "activeNoteId"
-      console.log title
       Notes.update(noteId, {$set: {title: title}})
 
 

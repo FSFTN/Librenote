@@ -9,6 +9,11 @@
       }
     }
   }
+  li.true{
+    .edit-todo{
+      text-decoration: line-through;
+    }
+  }
   .editing{
     p{
       border-bottom: 1px solid #efefef;
