@@ -1,0 +1,51 @@
+<template name="newTodo">
+  <div class="input-field col s12">
+    <input placeholder="Enter Title" id="title" type="text" class="validate">
+  </div>
+  <div class="col s12">
+    <ul class="todo-list">
+      {{#each todos}} 
+      <li  class="{{_id}}-todo-item">
+        <p class="row">
+          <div class="col s1">
+            <input type="checkbox" class="filled-in" id="{{_id}}" checked="{{checked}}" />
+            <label for="{{_id}}"></label>
+          </div>
+          <div class="col s10">
+            <input type="text" class="edit-todo" name="todo-tiem" id="" value="{{text}}" />
+          </div>
+          <div class="col s1">
+            <a href="#" class="remove-todo">
+              <i class="fa fa-remove"></i>
+            </a>
+          </div>
+        </p>
+      </li>
+      {{/each}}
+      <div class="row new-todo-container">
+        <div class="col s1">
+          <i class="fa fa-plus"></i>
+        </div>
+        <div class="col s10">
+          <input placeholder="Enter todo" id="new-todo" type="text" class="validate">
+        </div>
+        </div>
+    </ul>
+  </div>
+  <div class="row mb-zero">
+    <div class="colors-container col s8">
+      <a href="#" class="black-text" data-color="white"> <i class="fa fa-tint fa-3x"></i></a>
+      <a href="#" class="red-text" data-color="#FF6D3F"> <i class="fa fa-tint fa-3x"></i></a>
+      <a href="#" class="orange-text" data-color="#FF9B00"> <i class="fa fa-tint fa-3x"></i></a>
+      <a href="#" class="yellow-text" data-color="#FFDA00"> <i class="fa fa-tint fa-3x"></i></a>
+      <a href="#" class="blue-text" data-color="#3FC3FF"> <i class="fa fa-tint fa-3x"></i></a>
+      <a href="#" class="grey-text" data-color="#B8C4C9"> <i class="fa fa-tint fa-3x"></i></a>
+      <a href="#" class="teal-text" data-color="#1CE8B5"> <i class="fa fa-tint fa-3x"></i></a>
+      <a href="#" class="green-text" data-color="#95D641"> <i class="fa fa-tint fa-3x"></i></a>
+    </div>
+    <div class="col s4">
+      <a class="waves-effect btn-done right" id="btn-done"  href="#">Done</a>
+    </div>
+  </div>
+</template>
+

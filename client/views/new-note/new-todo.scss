@@ -1,0 +1,49 @@
+.todo-list{
+  li p{
+    margin: 0px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    &:hover{
+      .remove-todo{
+        display: block;
+      }
+    }
+  }
+  .editing{
+    p{
+      border-bottom: 1px solid #efefef;
+      border-top: 1px solid #efefef;
+    }
+    .remove-todo{
+      display: block;
+    }
+  }
+  label{
+    top: 12px;
+
+  }
+  [type="checkbox"].filled-in:not(:checked) + label:after{
+    border: 1px solid rgba(0,0,0,0.5);
+  }
+  [type="checkbox"].filled-in:checked + label:after{
+    background-color: rgba(0,0,0,0.5);
+    border-color: rgba(0,0,0,0.1);
+  }
+  .edit-todo{
+    &:focus{
+    }
+  }
+  .fa-plus, .fa-remove{
+    margin-top: 13px;
+    margin-right: 3px;
+    font-size: 1.3rem;
+    color: rgba(0,0,0,0.5);
+  }
+  .fa-remove{
+    margin-top: 15px;
+  }
+  .remove-todo{
+    display: none;
+  }
+}
+
