@@ -5,6 +5,10 @@ Template.listNote.helpers
     else
       Notes.find({trash: false, archive: false}, { sort: [["score", "desc"]] })
 
+  todos:(noteId) ->
+    console.log noteId
+    Todos.find({noteId: noteId})
+
 Template.listNote.events
   "click .btn-delete":(e,t) ->
     Notes.update({_id: @._id}, {$set: trash: true})
@@ -17,3 +21,8 @@ Template.listNote.events
   "click .btn-archive": (e,t)->
     Notes.update({_id: @._id}, {$set: archive: true})
     Materialize.toast('Note Archived', 2000)
+
+
+#Template.todoNote.helpers
+  #todos: ->
+  

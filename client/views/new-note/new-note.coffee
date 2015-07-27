@@ -32,11 +32,13 @@ Template.newNote.events
       content = ""
       id = Session.get "activeNoteId"
       type = "todo"
+      count = Todos.find({noteId: id}).count()
     else
       content = t.$('#text-note').text().trim()
       id = new Mongo.ObjectID()._str
       type = "text"
-    if title or content or todo_status
+      count = 1
+    if title or content or count > 0
       Notes.insert
         _id: id
         title: title

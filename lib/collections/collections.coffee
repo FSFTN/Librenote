@@ -1,4 +1,5 @@
 @Notes = new Mongo.Collection 'notes'
+@Todos = new Mongo.Collection 'todos'
 
 Schemas = {}
 
@@ -39,5 +40,31 @@ Schemas.Note = new SimpleSchema
     type: String
   }
 
+Schemas.Todo = new SimpleSchema
+  text: {
+    type: String
+    optional: true
+  },
+  checked:{
+    type: Boolean
+  },
+  createdAt:{
+    type: Date
+    denyUpdate: true
+  },
+  lastModified:{
+    type: Date
+    denyInsert: true
+    optional: true
+  },
+  noteId: {
+    type: String
+    optional: true
+  },
+  owner: {
+    type: String
+  }
+
 
 @Notes.attachSchema(Schemas.Note)
+@Todos.attachSchema(Schemas.Todo)

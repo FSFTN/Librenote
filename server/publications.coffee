@@ -1,5 +1,4 @@
 Meteor.publish "allNotes",(searchValue) ->
-  console.log "searchValue "+ searchValue
   if searchValue is ""
     Notes.find({owner: @userId}, {sort: {date: -1}})
   else
@@ -15,3 +14,10 @@ Meteor.publish "allNotes",(searchValue) ->
       }
     )
     cursor
+
+Meteor.publish "editTodo", (noteId)->
+  if noteId
+    Todos.find({noteId: noteId, owner: @userId})
+
+Meteor.publish "allTodos",->
+  Todos.find({owner: @userId})
