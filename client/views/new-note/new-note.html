@@ -4,26 +4,26 @@
       <div class="new-note-container">
         <div class="row note-inner">
           {{#if isAddingNote}}
-          {{#if isAddingTodo}}
-          {{> newTodo}}
-          {{else}}
-          <div class="input-field col s12">
-            <input placeholder="Title" id="title" type="text" class="validate">
-            <div class="text-placeholder">
-              Add Note
-            </div>
-            <div contenteditable="true" id="text-note"></div>
+            {{#if isAddingTodo}}
+              {{> newTodo}}
+            {{else}}
+              <div class="input-field col s12">
+                <input placeholder="Title" id="title" type="text" class="validate">
+                <div class="text-placeholder">
+                  Add Note
+                </div>
+                <div contenteditable="true" id="text-note"></div>
 
-          </div>
-          {{/if}}
-          {{> noteControls}}
+              </div>
+            {{/if}}
+            {{> noteControls}}
           {{else}}
-          <p  class="note-placeholder">
-            <span>Add Note </span>
-            <a href="#" class="show-new-todo">
-              <i class="right fa fa-th-list"></i>
-            </a>
-          </p>
+            <p  class="note-placeholder">
+              <span>Add Note </span>
+              <a href="#" class="show-new-todo">
+                <i class="right fa fa-th-list"></i>
+              </a>
+            </p>
           {{/if}}
         </div>
       </div>
@@ -31,7 +31,7 @@
   </div>
 </template>
 <template name="noteControls">
-  <div class="row mb-zero">
+  <div class="row mb-zero note-controls">
     <div class="colors-container col s8">
       <a href="#" class="black-text" data-color="white"> <i class="fa fa-tint fa-3x"></i></a>
       <a href="#" class="red-text" data-color="#FF6D3F"> <i class="fa fa-tint fa-3x"></i></a>

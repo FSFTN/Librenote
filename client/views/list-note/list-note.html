@@ -9,10 +9,10 @@
         {{#if equals type "text"}}
           {{{content}}}
         {{else}}
-        <ul>
+        <ul class="todo-list">
           {{#each todos _id}}
           <li  class="{{_id}} {{checked}}">
-            <input type="checkbox" class="filled-in" id="{{_id}}" checked="{{checked}}"  onclick="return false" />
+            <input type="checkbox" class="filled-in" id="{{_id}}" checked="{{checked}}"  onclick="" />
             <label for="{{_id}}" style="top: 10px;"></label>
             {{text}}
             </li>
@@ -40,6 +40,3 @@
   {{> editNote}}
 </template>
 
-<template name="todoNote">
-
-</template>

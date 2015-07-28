@@ -31,11 +31,11 @@
     font-size: 17px;
     font-weight: bold;
     line-height: 23px;
-    min-height: 38px;
+    min-height: 30px;
     padding: 10px 15px 0 15px;
   }
   .note-content{
-    padding: 12px 5px 15px 12px;
+    padding: 0px 5px 15px 12px;
     font-size: 16px;
     font-weight: 100;
     line-height: 48px;
@@ -44,6 +44,13 @@
     overflow: hidden;
     color: rgba(0,0,0,0.6);
     margin-bottom: 0px;
+    .todo-list li{
+      height: 30px;
+      line-height: 30px;
+      &.true{
+        text-decoration: line-through;
+      }
+    }
   }
   .note-options{
     height: 45px;

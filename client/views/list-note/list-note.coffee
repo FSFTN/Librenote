@@ -6,7 +6,6 @@ Template.listNote.helpers
       Notes.find({trash: false, archive: false}, { sort: [["score", "desc"]] })
 
   todos:(noteId) ->
-    console.log noteId
     Todos.find({noteId: noteId})
 
 Template.listNote.events
@@ -15,14 +14,21 @@ Template.listNote.events
     Materialize.toast('Moved to Trash', 2000)
 
   "click .note-block":(e,t)->
-    Session.set "editNote", @
-    $('#edit-modal').openModal()
+    #event.stopPropagation() not working on checkbox so had to add this until we figure out a better fix
+    if t.$(e.target).hasClass('filled-in')
+      $('#edit-modal').closeModal()
+    else
+      Session.set "editNote", @
+      $('#edit-modal').openModal()
   
   "click .btn-archive": (e,t)->
     Notes.update({_id: @._id}, {$set: archive: true})
     Materialize.toast('Note Archived', 2000)
 
 
-#Template.todoNote.helpers
-  #todos: ->
-  
+  'change [type=checkbox]': (e,t) ->
+    e.stopPropagation()
+    checked = t.$(event.target).is(':checked')
+    Todos.update(@_id,{$set: {checked: checked}})
+
+
