@@ -47,7 +47,7 @@ Template.newNote.events
         color: Session.get "noteColor"
         trash: false
         archive: false
-        createdAt: Date.now()
+        createdAt: new Date()
         owner: Meteor.userId()
       Session.set "noteColor", "white"
       Session.set "isAddingNote", false

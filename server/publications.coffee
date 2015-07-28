@@ -1,6 +1,6 @@
 Meteor.publish "allNotes",(searchValue) ->
   if searchValue is ""
-    Notes.find({owner: @userId}, {sort: {date: -1}})
+    Notes.find({owner: @userId}, {sort: {createdAt: -1}})
   else
     cursor = Notes.find(
       { $text: {$search: searchValue} },

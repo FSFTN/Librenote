@@ -10,7 +10,7 @@ Template.newTodo.events
       Todos.insert
         text: todo
         checked: false
-        createdAt: Date.now()
+        createdAt: new Date()
         noteId: noteId
         owner: Meteor.userId()
       t.$('#new-todo').val('')

@@ -1,9 +1,9 @@
 Template.archive.helpers
   notes: ->
-    if Session.get "searchValue" is ""
-      Notes.find({archive: true, owner: Meteor.userId(), trash: false},{sort: {createdAt: -1} })
-    else
+    if Session.get "searchValue"
       Notes.find({trash: false, archive: true}, { sort: [["score", "desc"]] })
+    else
+      Notes.find({archive: true, owner: Meteor.userId(), trash: false},{sort: {createdAt: -1} })
 
 
 Template.archive.events

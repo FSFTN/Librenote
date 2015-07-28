@@ -12,7 +12,7 @@ Template.editNote.events
         title: title
         content: content
         color: currentData.color
-        lastModified: Date.now()
+        lastModified: new Date()
       }
       Notes.update({_id: @._id}, {$set: data})
       $('#edit-modal').closeModal()

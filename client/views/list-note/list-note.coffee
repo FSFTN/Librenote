@@ -1,9 +1,9 @@
 Template.listNote.helpers
   notes: ->
-    if Session.get "searchValue" is ""
-      Notes.find({trash: false, owner: Meteor.userId(), archive: false }, {sort: {createdAt: -1}})
-    else
+    if Session.get "searchValue" 
       Notes.find({trash: false, archive: false}, { sort: [["score", "desc"]] })
+    else
+      Notes.find({trash: false, owner: Meteor.userId(), archive: false }, {sort: {createdAt: -1}})
 
   todos:(noteId) ->
     Todos.find({noteId: noteId})
@@ -26,9 +26,9 @@ Template.listNote.events
     Materialize.toast('Note Archived', 2000)
 
 
-  'change [type=checkbox]': (e,t) ->
-    e.stopPropagation()
-    checked = t.$(event.target).is(':checked')
-    Todos.update(@_id,{$set: {checked: checked}})
+
+  'click .filled-in':(e,t) ->
+    Todos.update(@_id,{$set: {checked: !@checked}})
+
 
 
