@@ -2,6 +2,10 @@ Template.editNote.helpers
   activeNote: ->
     Session.get "editNote"
 
+  todos: ->
+    note = Session.get "editNote"
+    Todos.find({noteId: note._id })
+
 Template.editNote.events
   "click #btn-done":(e,t) ->
     title = t.$('#title').val().trim()
@@ -23,5 +27,9 @@ Template.editNote.events
     data = Session.get "editNote"
     data.color = color
     Session.set "editNote", data
+
+  "click #btn-back":(e,t)->
+    $('#edit-modal').closeModal()
+
 
 

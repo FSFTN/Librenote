@@ -3,7 +3,12 @@
     padding: 0px;
   }
   .note-outer{
+    padding-bottom: 8px;
   }
+  #btn-done, #btn-back{
+    font-weight: 600;
+  }
+  
   input[type=text]:not([readonly]){
     border-bottom: none;
     box-shadow: none;
