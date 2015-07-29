@@ -15,7 +15,7 @@ Template.listNote.events
 
   "click .note-block":(e,t)->
     #event.stopPropagation() not working on checkbox so had to add this until we figure out a better fix
-    if t.$(e.target).hasClass('filled-in')
+    if t.$(e.target).hasClass('list-checkbox')
       $('#edit-modal').closeModal()
     else
       Session.set "editNote", @
@@ -25,9 +25,7 @@ Template.listNote.events
     Notes.update({_id: @._id}, {$set: archive: true})
     Materialize.toast('Note Archived', 2000)
 
-
-
-  'click .filled-in':(e,t) ->
+  'click .list-checkbox':(e,t) ->
     Todos.update(@_id,{$set: {checked: !@checked}})
 
 

@@ -17,6 +17,12 @@
   #edit-note-content{
     min-height: 100px;
     outline: none;
+
+    #edit-list{
+      li.true{
+        text-decoration: line-through;
+      }
+    }
   }
   #title{
     color: #333; 

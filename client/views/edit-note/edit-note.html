@@ -12,13 +12,13 @@
             {{#if equals type "text"}}
             <div contenteditable="true" id="edit-note-content"> {{content}}</div>
             {{else}}
-            <ul class="todo-list">
+            <ul class="todo-list" id="edit-list">
               {{#each todos}}
-              <li  class="{{_id}}-todo-item {{checked}}">
+              <li  class="{{_id}}-todo {{checked}}">
                 <p class="row">
                   <div class="col s1">
-                    <input type="checkbox" class="filled-in" id="{{_id}}" checked="{{checked}}" />
-                    <label for="{{_id}}"></label>
+                    <input type="checkbox" class="filled-in edit-checkbox" id="{{_id}}-edit-checkbox" checked="{{checked}}" />
+                    <label for="{{_id}}-edit-checkbox"></label>
                   </div>
                   <div class="col s10">
                     <input type="text" class="edit-todo" name="todo-tiem" id="" value="{{text}}" />

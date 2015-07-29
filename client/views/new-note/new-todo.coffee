@@ -29,11 +29,12 @@ Template.newTodo.events
     
   "blur .edit-todo": (e,t)->
     t.$('.'+@_id+"-todo-item").removeClass("editing")
+    text = t.$(e.currentTarget).val()
+    Todos.update(@_id, {$set: {text: text}})
 
   
-  'change [type=checkbox]': (e,t) ->
-    checked = t.$(event.target).is(':checked')
-    Todos.update(@_id,{$set: {checked: checked}})
+  'click .new-checkbox':(e,t) ->
+    Todos.update(@_id,{$set: {checked: !@checked}})
 
   'click .remove-todo': (e,t)->
     Todos.remove(@_id)

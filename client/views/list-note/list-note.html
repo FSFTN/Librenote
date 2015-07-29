@@ -12,8 +12,8 @@
         <ul class="todo-list">
           {{#each todos _id}}
           <li  class="{{_id}} {{checked}}">
-            <input type="checkbox" class="filled-in" id="{{_id}}" checked="{{checked}}"  onclick="" />
-            <label for="{{_id}}" style="top: 10px;"></label>
+            <input type="checkbox" class="filled-in list-checkbox" id="{{_id}}-list-checkbox" checked="{{checked}}"  onclick="" />
+            <label for="{{_id}}-list-checkbox" style="top: 10px;"></label>
             {{text}}
             </li>
             {{/each}}
@@ -37,6 +37,5 @@
   {{else}}
   {{> noteNotFound}}
   {{/each}}
-  {{> editNote}}
 </template>
 
