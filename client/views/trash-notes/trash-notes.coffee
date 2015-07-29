@@ -12,6 +12,9 @@ Template.trash.helpers
     else
       false
 
+  todos:(noteId) ->
+    Todos.find({noteId: noteId})
+
 Template.trash.events
   "click .btn-delete":(e,t) ->
     if confirm("Are you sure? You can not restore once deleted from trash")

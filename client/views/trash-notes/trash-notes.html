@@ -19,7 +19,19 @@
           </div>
           {{/if}}
           <div class="note-content row">
-            {{{content}}}
+            {{#if equals type "text"}}
+              {{content}}
+            {{else}}
+            <ul class="todo-list">
+              {{#each todos _id}}
+              <li  class="{{_id}} {{checked}}">
+                <input type="checkbox" class="filled-in list-checkbox" id="{{_id}}-trash-checkbox" checked="{{checked}}"  onclick="return false" />
+                <label for="{{_id}}-trash-checkbox" style="top: 10px;"></label>
+                {{text}}
+                </li>
+                {{/each}}
+              </ul>
+            {{/if}}
           </div>
         </div>
         <div class="note-options row">
