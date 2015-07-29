@@ -5,7 +5,7 @@ Template.newTodo.helpers
 Template.newTodo.events
   "keypress #new-todo":(e,t) ->
     if e.which is 13
-      todo = t.$('#new-todo').val().trim()
+      todo = t.$(e.currentTarget).val().trim()
       noteId = Session.get "activeNoteId"
       Todos.insert
         text: todo
@@ -13,7 +13,7 @@ Template.newTodo.events
         createdAt: new Date()
         noteId: noteId
         owner: Meteor.userId()
-      t.$('#new-todo').val('')
+      t.$(e.currentTarget).val('')
         
         
   "keypress #title":(e,t)->

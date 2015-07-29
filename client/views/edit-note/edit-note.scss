@@ -9,6 +9,12 @@
     font-weight: 600;
   }
   
+  .new-todo-container{
+    div.s1{
+      text-align:right;
+      padding-right: 8px;
+    }
+  }
   input[type=text]:not([readonly]){
     border-bottom: none;
     box-shadow: none;
@@ -50,7 +56,10 @@
     }
   }
 }
-#edit-modal.modal{
-  width: 40%;
-  top: 25% !important
+
+@media (min-width: 992px) { 
+  #edit-modal.modal{
+    width: 40%;
+    top: 25% !important
+  }
 }

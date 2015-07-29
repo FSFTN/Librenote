@@ -45,4 +45,17 @@ Template.editNote.events
     text = t.$(e.currentTarget).val()
     Todos.update(@_id, {$set: {text: text}})
 
+  "keypress #edit-new-todo":(e,t) ->
+    if e.which is 13
+      todo = t.$(e.currentTarget).val().trim()
+      currentNote = Session.get "editNote"
+      Todos.insert
+        text: todo
+        checked: false
+        createdAt: new Date()
+        noteId: currentNote._id
+        owner: Meteor.userId()
+      t.$(e.currentTarget).val('')
+        
+        
 
