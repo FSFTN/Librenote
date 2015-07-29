@@ -3,6 +3,10 @@ Template.navbar.events
     Meteor.logout()	
     Router.go '/'
 
+  "click .brand": ()->
+    Session.set "activeTemplate", "Note"
+    Router.go "/"
+
   "keyup #search-field": (e,t) ->
     searchValue =  $(e.currentTarget).val()
     if searchValue.length > 2
