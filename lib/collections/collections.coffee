@@ -8,12 +8,12 @@ Schemas.Note = new SimpleSchema
     type: String
     max: 300
     optional: true
-    index: true
+    #index: true
   },
   content: {
     type: String
     optional: true
-    index: true
+    #index: true
   },
   type:{
     type: String
@@ -44,7 +44,7 @@ Schemas.Todo = new SimpleSchema
   text: {
     type: String
     optional: true
-    index: true
+    #index: true
   },
   checked:{
     type: Boolean
