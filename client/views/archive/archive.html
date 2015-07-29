@@ -14,7 +14,7 @@
               {{content}}
             {{else}}
             <ul class="todo-list">
-              {{#each todos _id}}
+              {{#each noteTodos _id}}
               <li  class="{{_id}} {{checked}}">
                 <input type="checkbox" class="filled-in" id="{{_id}}-archive-checkbox" checked="{{checked}}"  onclick="return false" />
                 <label for="{{_id}}-archive-checkbox" style="top: 10px;"></label>

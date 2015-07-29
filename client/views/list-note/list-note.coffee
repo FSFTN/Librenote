@@ -5,8 +5,6 @@ Template.listNote.helpers
     else
       Notes.find({trash: false, owner: Meteor.userId(), archive: false }, {sort: {createdAt: -1}})
 
-  todos:(noteId) ->
-    Todos.find({noteId: noteId})
 
 Template.listNote.events
   "click .btn-delete":(e,t) ->

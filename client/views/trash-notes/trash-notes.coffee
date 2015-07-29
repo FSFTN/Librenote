@@ -12,8 +12,6 @@ Template.trash.helpers
     else
       false
 
-  todos:(noteId) ->
-    Todos.find({noteId: noteId})
 
 Template.trash.events
   "click .btn-delete":(e,t) ->

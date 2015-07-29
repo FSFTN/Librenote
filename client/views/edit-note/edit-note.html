@@ -13,7 +13,7 @@
             <div contenteditable="true" id="edit-note-content"> {{content}}</div>
             {{else}}
             <ul class="todo-list" id="edit-list">
-              {{#each todos}}
+              {{#each noteTodos _id}}
               <li  class="{{_id}}-todo {{checked}}">
                 <p class="row">
                   <div class="col s1">

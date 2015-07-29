@@ -5,8 +5,6 @@ Template.archive.helpers
     else
       Notes.find({archive: true, owner: Meteor.userId(), trash: false},{sort: {createdAt: -1} })
 
-  todos:(noteId) ->
-    Todos.find({noteId: noteId})
 
 
 Template.archive.events

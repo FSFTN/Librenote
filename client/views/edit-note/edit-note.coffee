@@ -2,9 +2,9 @@ Template.editNote.helpers
   activeNote: ->
     Session.get "editNote"
 
-  todos: ->
-    note = Session.get "editNote"
-    Todos.find({noteId: note._id })
+  #todos: ->
+    #note = Session.get "editNote"
+    #Todos.find({noteId: note._id })
 
 Template.editNote.events
   "click #btn-done":(e,t) ->

@@ -23,7 +23,7 @@
               {{content}}
             {{else}}
             <ul class="todo-list">
-              {{#each todos _id}}
+              {{#each noteTodos _id}}
               <li  class="{{_id}} {{checked}}">
                 <input type="checkbox" class="filled-in list-checkbox" id="{{_id}}-trash-checkbox" checked="{{checked}}"  onclick="return false" />
                 <label for="{{_id}}-trash-checkbox" style="top: 10px;"></label>
