@@ -34,6 +34,14 @@
     color: #fff;
   }
 }
+.note-actions{
+  a{
+    color: #fff;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}
 
 @media (max-width: 992px) { 
   .nav2{

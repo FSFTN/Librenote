@@ -1,8 +1,28 @@
 <template name="sideNav">
   <div class="">
-    <div class="nav-note {{navColor}}">
-      <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-navicon"></i>{{activeTemplate}}</a>
+    <div class="nav-note nav2 note-actions" style="background-color: #6F6F6F; z-index:{{selectedNotesCount}}">
+      <div class="row">
+        <div class="col s4 m2 l2">
+          <a href="#" class="btn-flat waves-effect">
+            <i class="fa fa-long-arrow-left clear-selected"> &nbsp;{{selectedNotesCount}}</i>
+          </a>
+        </div>
+        <div class="col s8 m8 l8 center ">
+          <a href="#" class="btn-flat waves-effect delete-selected">
+            <i class="fa fa-trash"></i>
+          </a>
+          <a href="#" class="btn-flat waves-effect archive-selected">
+            <i class="fa fa-archive"></i>
+          </a>
+        </div>
+      </div>
     </div>
+    <div class="nav-note {{navColor}}">
+      <div class="row">
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-navicon"></i>{{activeTemplate}}</a>
+      </div>
+    </div>
+
     <ul id="slide-out" class="side-nav">
       <li>
         <a href="/" class="sidenav-note">

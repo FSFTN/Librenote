@@ -1,6 +1,6 @@
 <template name="listNote">
   {{#each notes}}
-  <div class="card col s12 m5 l2 note-block z-depth-1" style="background-color: {{color}}">
+  <div class="card col s12 m5 l2 note-block z-depth-1" style="background-color: {{color}}" id="{{_id}}-list-note">
     <div class="row">
       <div class="note-title row">
         {{title}}
@@ -21,6 +21,9 @@
         {{/if}}
       </div>
     </div>
+    <a href="#" class="btn-floating  select-note">
+      <i class="fa fa-check "></i>
+    </a>
     <div class="note-options row">
       <div class="col s3 right">
         <a class="btn-delete right"   href="#">

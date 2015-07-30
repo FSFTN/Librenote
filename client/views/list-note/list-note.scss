@@ -7,6 +7,7 @@
   word-break: break-word;
   min-height: 120px;
   padding: 0px !important;
+  overflow: visible;
   &:hover{
     -webkit-box-shadow: 0 2px 15px rgba(0,0,0,0.30);
     box-shadow: 0 2px 15px rgba(0,0,0,0.30);
@@ -25,6 +26,36 @@
       a{
         display: block;
       }
+    }
+    .btn-floating{
+      display: block;
+    }
+  }
+  &.selected{
+   -webkit-box-shadow: 0 0 0 3px #6f6f6f;
+   box-shadow: 0 0 0 3px #6f6f6f;    
+    .btn-floating{
+      display: block;
+      background-color: #6F6F6F;
+      i{
+        color: #fff;
+      }
+    }
+  }
+  .btn-floating {
+    position: absolute;
+    top: -13px;
+    left: -13px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: none;
+    background-color: #fff;
+    i{
+      font-size: 1rem;
+      color: #6F6F6F;
+      font-weight: 100;
+      line-height: 30px;
     }
   }
   .note-title{

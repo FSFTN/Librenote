@@ -1,7 +1,6 @@
 Meteor.methods
   clearTrash: () ->
     Notes.remove({owner: @userId, trash: true})
-    true
 
   sendEmail: (to, from, subject, text) ->
     check([to, from, subject, text], [ String ])
@@ -12,3 +11,10 @@ Meteor.methods
       subject: subject
       text: text
     
+  trashMultipleNotes:(noteIds)->
+    if noteIds
+      Notes.update({_id: {$in: noteIds}}, {$set: trash: true},{multi: true})
+
+  archiveMultipleNotes:(noteIds)->
+    if noteIds
+      Notes.update({_id: {$in: noteIds}}, {$set: archive: true},{multi: true})

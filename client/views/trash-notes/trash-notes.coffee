@@ -23,4 +23,10 @@ Template.trash.events
 
   "click .btn-delete-all":(e,t)->
     if confirm("Are you sure? You can not restore once deleted from trash")
-      Meteor.call('clearTrash')
+      Meteor.call('clearTrash', (err, res)->
+        if err
+          Materialize.toast(err.reason, 1500)
+        else
+          Materialize.toast('Notes removed permanently', 1500)
+
+      )

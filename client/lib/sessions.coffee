@@ -1,4 +1,6 @@
 Session.setDefault "noteColor", "white"
-Session.set "isAddingNote", false
-Session.set "isAddingTodo", false
-Session.set "searchValue", ""
+Session.setDefault "activeTemplate", "Note"
+Session.setDefault "isAddingNote", false
+Session.setDefault "isAddingTodo", false
+Session.setDefault "searchValue", ""
+Session.setDefault "selectedNotes", []
