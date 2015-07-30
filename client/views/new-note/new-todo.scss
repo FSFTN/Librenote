@@ -7,8 +7,8 @@
       .remove-todo{
         display: block;
       }
-      border-bottom: 1px solid #efefef;
-      border-top: 1px solid #efefef;
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(0,0,0,0.2);
     }
   }
   li.true{
@@ -17,10 +17,6 @@
     }
   }
   .editing{
-    p{
-      border-bottom: 1px solid #efefef;
-      border-top: 1px solid #efefef;
-    }
     .remove-todo{
       display: block;
     }
