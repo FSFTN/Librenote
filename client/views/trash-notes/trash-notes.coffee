@@ -30,3 +30,15 @@ Template.trash.events
           Materialize.toast('Notes removed permanently', 1500)
 
       )
+
+  "click .select-note":(e,t)->
+    e.stopPropagation()
+    t.$("#"+@_id+"-trash-note").toggleClass('selected')
+    noteIds = Session.get "selectedNotes"
+    index = noteIds.indexOf(@_id)
+    if index > -1
+      noteIds.splice(index,1)
+      Session.set "selectedNotes", noteIds
+    else
+      noteIds.push(@_id)
+      Session.set "selectedNotes", noteIds

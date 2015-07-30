@@ -8,12 +8,30 @@
           </a>
         </div>
         <div class="col s8 m8 l8 center ">
-          <a href="#" class="btn-flat waves-effect delete-selected">
+          {{#if equals activeTemplate "Note"}}
+          <a href="#" class="btn-flat waves-effect trash-selected">
             <i class="fa fa-trash"></i>
           </a>
           <a href="#" class="btn-flat waves-effect archive-selected">
             <i class="fa fa-archive"></i>
           </a>
+          {{/if}}
+          {{#if equals activeTemplate "Trash"}}
+          <a href="#" class="btn-flat waves-effect restore-selected">
+            <i class="fa fa-mail-reply"></i>
+          </a>
+          <a href="#" class="btn-flat waves-effect delete-selected">
+            <i class="fa fa-exclamation-triangle"></i>
+          </a>
+          {{/if}} 
+          {{#if equals activeTemplate "Archive"}}
+          <a href="#" class="btn-flat waves-effect trash-selected">
+            <i class="fa fa-trash"></i>
+          </a>
+          <a href="#" class="btn-flat waves-effect restore-selected">
+            <i class="fa fa-mail-reply"></i>
+          </a>
+          {{/if}}
         </div>
       </div>
     </div>
@@ -27,7 +45,7 @@
       <li>
         <a href="/" class="sidenav-note">
           <i class="fa fa-book"></i>
-          Notes
+          Note
         </a>
       </li>
       <li>

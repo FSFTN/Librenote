@@ -34,7 +34,7 @@ Template.sideNav.events
     Session.set "selectedNotes", []
     $('.note-block').removeClass('selected')
 
-  "click .delete-selected":(e,t)->
+  "click .trash-selected":(e,t)->
     noteIds = Session.get "selectedNotes"
     Meteor.call("trashMultipleNotes", noteIds, (err,res)->
       if err
@@ -53,6 +53,28 @@ Template.sideNav.events
         Materialize.toast('Moved to Archive', 1500)
         Session.set "selectedNotes", []
     )
+
+  "click .restore-selected":(e,t)->
+    noteIds = Session.get "selectedNotes"
+    Meteor.call("restoreMultipleNotes", noteIds, (err,res)->
+      if err
+        console.log err
+      else
+        Materialize.toast('Notes restored', 1500)
+        Session.set "selectedNotes", []
+    )
+
+  "click .delete-selected":(e,t)->
+    if confirm("Are you sure? You can not restore once deleted from trash")
+      noteIds = Session.get "selectedNotes"
+      Meteor.call("deleteMultipleNotes", noteIds, (err,res)->
+        if err
+          console.log err
+        else
+          Materialize.toast('Notes deleted forever', 1500)
+          Session.set "selectedNotes", []
+      )
+  
   
   "click .hello":()->
     $('.button-collapse').sideNav('show')
