@@ -13,7 +13,7 @@ iron:router
 fortawesome:fontawesome
 service-configuration
 accounts-github
-meteorhacks:subs-manager
 msavin:mongol
 aldeed:collection2
 email
+matb33:collection-hooks

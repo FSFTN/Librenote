@@ -21,7 +21,11 @@ SigninController = RouteController.extend
   
 Router.route '/', ->
   name: 'home'
-  @render 'home'
+  @wait(Meteor.subscribe('notes', Session.get "searchValue"))
+  if @ready
+    @render 'home'
+  else
+    @render 'loading'
   @layout "applicationLayout"
 
 Router.route '/signin',
