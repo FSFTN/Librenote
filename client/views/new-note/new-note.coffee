@@ -25,6 +25,10 @@ Template.newNote.events
     else
       t.$('.text-placeholder').hide()
 
+  "keypress #text-note, keypress #title, keypress #new-todo":(e,t)->
+    if (e.keyCode is 13 or e.keyCode is 10) and e.ctrlKey
+      t.$('#btn-done').trigger('click')
+
   "click #btn-done":(e,t)->
     title = t.$('#title').val().trim()
     todo_status = Session.get "isAddingTodo"
@@ -37,7 +41,7 @@ Template.newNote.events
       content = t.$('#text-note').text().trim()
       id = new Mongo.ObjectID()._str
       type = "text"
-      count = 1
+      count = 0
     if title or content or count > 0
       Notes.insert
         _id: id
@@ -65,6 +69,9 @@ Template.newNote.events
     Session.set "isAddingTodo", true
     Session.set "isAddingNote", true
     Session.set "activeNoteId", noteId
+    Meteor.setTimeout(->
+      t.$('#new-todo').focus()
+    )
 
   "click #btn-back":()->
     Session.set "isAddingTodo", false
