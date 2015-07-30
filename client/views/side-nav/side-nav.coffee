@@ -1,3 +1,14 @@
+Template.sideNav.onRendered ->
+  $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: false, 
+      hover: true,
+      gutter: 20, 
+      belowOrigin: true
+    }
+  )
+   
 Template.sideNav.helpers
   activeTemplate: ->
     Session.get "activeTemplate"
@@ -75,6 +86,13 @@ Template.sideNav.events
           Session.set "selectedNotes", []
       )
   
-  
-  "click .hello":()->
-    $('.button-collapse').sideNav('show')
+  "click .colors-container a":(e,t)->
+    color = $(e.currentTarget).attr('data-color').trim()
+    noteIds = Session.get "selectedNotes"
+    Meteor.call('updateColors',noteIds,color,(err,res)->
+      if err
+        console.log err
+      else
+        Materialize.toast('Color updated', 1500)
+    )
+

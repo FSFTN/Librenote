@@ -26,3 +26,7 @@ Meteor.methods
   restoreMultipleNotes:(noteIds)->
     if noteIds
       Notes.update({_id: {$in: noteIds}}, {$set: archive: false, trash: false},{multi: true})
+
+  updateColors:(noteIds, color)->
+    if noteIds and color
+      Notes.update({_id: {$in: noteIds}}, {$set:  color: color},{multi: true})

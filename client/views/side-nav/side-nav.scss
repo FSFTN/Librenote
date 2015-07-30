@@ -41,6 +41,14 @@
       opacity: 0.8;
     }
   }
+  .colors-container{
+    .btn-flat{
+      padding: 0 1rem;
+    }
+    .row{
+      margin-bottom: 0px;
+    }
+  }
 }
 
 @media (max-width: 992px) { 
