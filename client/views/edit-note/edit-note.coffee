@@ -21,6 +21,10 @@ Template.editNote.events
     Notes.update({_id: @._id}, {$set: data})
     $('#edit-modal').closeModal()
 
+  "keypress #edit-note-content, keypress #title, keypress #edit-new-todo":(e,t)->
+    if (e.keyCode is 13 or e.keyCode is 10) and e.ctrlKey
+      t.$('#btn-done').trigger('click')
+
     	
   "click .colors-container a":(e,t)->
     color = $(e.currentTarget).attr('data-color').trim()
