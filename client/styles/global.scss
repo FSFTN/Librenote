@@ -8,3 +8,42 @@ body{
 .mb-zero{
   margin-bottom: 0px;
 }
+@mixin transform-origin($args) {
+  -webkit-transform-origin: $args;
+  -moz-transform-origin: $args;
+  -ms-transform-origin: $args;
+  -o-transform-origin: $args;
+  transform-origin: $args;
+}
+
+
+.tooltip {
+  $tooltip-color: rgba(#000, .8);
+  padding: 10px 8px;
+  font-size: 1rem;
+  z-index: 2000;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: 2px;
+  color: #fff;
+  min-height: 36px;
+  line-height: 1rem;
+  max-width: 200px;
+  text-align: center;
+  overflow: hidden;
+  transition: opacity .1s ease-out;
+
+  .inner {
+    background-color: $tooltip-color;
+    padding: 10px 8px;
+    border-radius: 4px;
+  }
+
+  &.hide {
+    opacity: 0;
+  }
+
+  &.show {
+    opacity: 1;
+  }
+}
