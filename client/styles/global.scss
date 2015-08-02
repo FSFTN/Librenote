@@ -20,18 +20,17 @@ body{
 .tooltip {
   $tooltip-color: rgba(#000, .8);
   padding: 10px 8px;
-  font-size: 1rem;
+  font-size: 11px;
   z-index: 2000;
   pointer-events: none;
   opacity: 0;
   border-radius: 2px;
   color: #fff;
   min-height: 36px;
-  line-height: 1rem;
+  line-height: 11px;
   max-width: 200px;
   text-align: center;
   overflow: hidden;
-  transition: opacity .1s ease-out;
 
   .inner {
     background-color: $tooltip-color;
@@ -44,6 +43,6 @@ body{
   }
 
   &.show {
-    opacity: 1;
+    opacity:1;
   }
 }

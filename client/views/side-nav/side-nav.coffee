@@ -16,7 +16,7 @@ Template.sideNav.helpers
   navColor: ->
     temp = Session.get "activeTemplate"
     switch temp
-      when "Note" then "yellow darken-2"
+      when "Notes" then "yellow darken-2"
       when "Trash" then "grey darken-2"
       when "Archive" then "teal"
       else "yellow darken-2"
@@ -37,7 +37,7 @@ Template.sideNav.helpers
 Template.sideNav.events
   "click #slide-out a":(e,t) ->
     $('.button-collapse').sideNav('hide')
-    text =  $(e.currentTarget).text().trim()
+    text =  $(e.currentTarget).attr('data-text')
     Session.set "activeTemplate", text
 
 
