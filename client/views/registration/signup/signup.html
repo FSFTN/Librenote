@@ -1,4 +1,7 @@
 <template name="signup">
+  {{#if loggingIn}}
+  {{> loading}} 
+  {{else}}
   <div class="row signup-container">
     <div class="col s10 m8 l4 offset-s1 offset-m2 offset-l4 card signup-form">
       <h4 class="center-align">
@@ -44,4 +47,5 @@
       </div>
     </div>
   </div>
+  {{/if}}
 </template>

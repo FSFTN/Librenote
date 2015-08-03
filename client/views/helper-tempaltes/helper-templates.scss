@@ -3,4 +3,92 @@
   position: absolute;
   width: 94%;
   color: rgba(0,0,0,0.4);
+
+}
+
+.loading-container{
+  position:absolute;
+  height:50px;
+  width:50px;
+  left:50%;
+  top:50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-perspective:400px;
+          perspective:400px;
+  .cube{
+    height:50px;
+    widht:50px;
+    -webkit-transform-origin:50% 50%;
+            transform-origin:50% 50%;
+    -webkit-transform-style:preserve-3d;
+            transform-style:preserve-3d;
+    -webkit-animation:rotate 4s infinite ease-in-out;
+            animation:rotate 4s infinite ease-in-out;
+    
+  }
+  .side{
+    position:absolute;
+    display:block;
+    height:50px;
+    width:50px;
+  }
+  .side1{
+    background:#1CE8B5;
+    -webkit-transform:translateZ(50px);
+            transform:translateZ(50px);
+  }
+  .side2{
+    background:#95D641;
+    -webkit-transform:rotateY(90deg) translateZ(50px);
+            transform:rotateY(90deg) translateZ(50px);
+  }
+  .side3{
+    background:#B8C4C9;
+    -webkit-transform:rotateY(180deg) translateZ(50px);
+            transform:rotateY(180deg) translateZ(50px);
+  }
+  .side4{
+    background: #3FC3FF;
+    -webkit-transform:rotateY(-90deg) translateZ(50px);
+            transform:rotateY(-90deg) translateZ(50px);
+  }
+  .side5{
+    background:#FFDA00;
+    -webkit-transform:rotateX(90deg) translateZ(50px);
+            transform:rotateX(90deg) translateZ(50px);
+  }
+  .side6{
+    background:#FF6D3F;
+    -webkit-transform:rotateX(-90deg) translateZ(50px);
+            transform:rotateX(-90deg) translateZ(50px);
+  }
+
+  @-webkit-keyframes rotate{
+    0%{
+      -webkit-transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    33.33%{
+       -webkit-transform:rotateX(360deg) rotateY(0deg)  rotateZ(0deg);    
+    }
+    66.66%{
+       -webkit-transform:rotateX(360deg) rotateY(360deg)  rotateZ(0deg);
+    }
+    100%{
+       -webkit-transform:rotateX(360deg) rotateY(360deg)  rotateZ(360deg);
+    }
+  }
+  @keyframes rotate{
+    0%{
+      transform:rotateX(0deg) rotateY(0deg);
+    }
+    50%{
+      transform:rotateX(360deg) rotateY(0deg);    
+    }
+    100%{
+      transform:rotateX(360deg) rotateY(360deg);
+    }
+  }
+
+
 }

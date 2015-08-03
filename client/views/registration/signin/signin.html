@@ -1,4 +1,7 @@
 <template name="signin">
+  {{#if loggingIn}}
+  {{> loading}} 
+  {{else}}
   <div class="row login-container">
     {{#if resetToken}}
       {{> resetPassword}}
@@ -55,4 +58,5 @@
       </div>
       {{/if}}
     </div>
+    {{/if}}
   </template>
