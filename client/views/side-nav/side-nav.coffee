@@ -96,3 +96,6 @@ Template.sideNav.events
         Materialize.toast('Color updated', 1500)
     )
 
+  'click .sidenav-logout':(e,t)->
+    Meteor.logout()	
+    Router.go '/'
