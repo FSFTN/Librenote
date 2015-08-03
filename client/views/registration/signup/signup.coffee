@@ -30,8 +30,5 @@ Template.signup.events
 
 
   "keypress #email, keypress #confirm-password": (e,t)->
-    email = t.$("email").val()
-    password = t.$("password").val()
-    password2 = t.$("#confirm-password").val()
-    if e.which is 13 and email and password is password2
+    if e.which is 13
       t.$('#signup-btn').trigger('click')

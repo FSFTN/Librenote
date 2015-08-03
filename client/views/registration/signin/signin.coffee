@@ -29,9 +29,7 @@ Template.signin.events
       Materialize.toast('Email / Password may not be empty', 2000)
 
   "keypress #signin-email, keypress #signin-password": (e,t)->
-    email = t.$("#signin-email").val()
-    password = t.$("#signin-password").val()
-    if e.which is 13 and email and password
+    if e.which is 13
       t.$('#signin-btn').trigger('click')
 
   "click .btn-forgot":(e,t)->
@@ -43,16 +41,21 @@ Template.signin.events
     if email is "" or re.test(email) is false
       Materialize.toast('Please provide a valid email address', 1500)
     else
-      t.$('.fa-spinner').show()
+      t.$("#btn-forgot-mail").text('Sending...')
       t.$('#forgot-mail').prop('disabled', true)
       Accounts.forgotPassword({email: email}, (error)->
         if error
           Materialize.toast(error.reason, 1500)
           t.$('#forgot-mail').prop('disabled', false)
-          t.$('.fa-spinner').hide()
+          t.$("#btn-forgot-mail").text('Send')
         else
           t.$('#forgot-mail').val('').prop('disabled', false)
+          t.$("#btn-forgot-mail").text('Send')
           Materialize.toast("Mail sent successfully", 1500)
-          t.$('.fa-spinner').hide()
           t.$('.fg-password-container').fadeToggle()
       )
+
+  "keypress #forgot-mail":(e,t)->
+    if e.which is 13
+      t.$('#btn-forgot-mail').trigger('click')
+
