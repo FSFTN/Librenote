@@ -12,7 +12,6 @@ accounts-password
 iron:router
 fortawesome:fontawesome
 service-configuration
-accounts-github
 msavin:mongol
 aldeed:collection2
 email

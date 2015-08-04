@@ -1,18 +1,8 @@
 Template.signin.helpers
   resetToken: ->
     Session.get "resetToken"
+
 Template.signin.events
-  "click .github-btn": ()->
-    Meteor.loginWithGithub
-      requestPermissions:["user"]
-      requestOfflineToken:true
-      , (error) ->
-        if error
-          console.log error.reason 
-        else
-          Router.go "/"
-
-
   "click #signin-btn": (e,t)->
     e.preventDefault()	
     email = t.$("#signin-email").val()
