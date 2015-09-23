@@ -15,6 +15,9 @@
 }
 .side-nav{
   top: 65px;
+  li:last-child{
+    border-top: 1px solid #ddd;
+  }
 }
 .yellow{
   @extend .nav2;

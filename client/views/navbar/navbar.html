@@ -5,9 +5,19 @@
         <a href="/" class="brand left" >LibreNote</a>
         <a href="#" data-activates="mobile-nav"  class="right button-collapse"><i class="mdi-navigation-more-vert"></i></a>
         <ul class="right hide-on-med-and-down">
+          <li>
+          <a href="http://github.com/fsftn/librenote" class="waves-effect left" data-text="" target="_blank">
+            <i class='fa fa-github'> Fork</i>
+            </a>
+          </li>
           {{#if currentUser}}
-          <li><a href="#" class="logout">Logout</a></li>
+          <li>
+            <a href="#" class="logout">
+              <i class="fa fa-sign-out"> Logout</i>
+            </a>
+          </li>
           {{/if}}
+
         </ul>
         <div class="left">
           <div class="input-field">
