@@ -12,7 +12,7 @@ Free(as in freedom) alternative for [Google Keep](https://keep.google.com/)
 4. Give Pull Request to develop branch. Pull request to master will not be accepted
 5. Write clear description to the pull request.
 
-##Meteor leaning resources
+##Meteor learning resources
 1. https://github.com/Meteor-Chennai/Meteor-Learning
 2. https://www.yauh.de/best-learning-resources-for-meteorjs/
 
