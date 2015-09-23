@@ -3,7 +3,7 @@ Meteor.publish "notes",(searchValue) ->
     Notes.find({owner: @userId}, {sort: {createdAt: -1}})
   else
     cursor = Notes.find(
-      { $text: {$search: searchValue} },
+      { owner: @userId, $text: {$search: searchValue} },
       {
         fields: {
           score: { $meta: "textScore" }
@@ -21,7 +21,7 @@ Meteor.publish "todos",(searchValue)->
   else
     #fetch all the notes with the search query and get the noteId of each result
     todoIds = Todos.find(
-      { $text: {$search: searchValue} },
+      { owner: @userId, $text: {$search: searchValue} },
       {
         fields: {
           score: { $meta: "textScore" }
@@ -34,10 +34,10 @@ Meteor.publish "todos",(searchValue)->
     ).map((todo)-> todo.noteId)
 
    #get all the notes with the obtained ids
-    notes = Notes.find({_id: {$in: todoIds}})
+    notes = Notes.find({_id: {$in: todoIds}, owner: @userId})
 
     noteIds = notes.map((note)-> note._id)
-    todos = Todos.find({noteId: {$in: noteIds}})
+    todos = Todos.find({noteId: {$in: noteIds}, owner: @userId})
     return [
       notes
       todos
