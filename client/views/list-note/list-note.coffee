@@ -1,7 +1,7 @@
 Template.listNote.helpers
   notes: ->
     if Session.get "searchValue" 
-      Notes.find({trash: false, archive: false}, { sort: [["score", "desc"]] })
+      Notes.find({trash: false, archive: false, owner: Meteor.userId()}, { sort: [["score", "desc"]] })
     else
       Notes.find({trash: false, owner: Meteor.userId(), archive: false }, {sort: {createdAt: -1}})
 
