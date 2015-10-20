@@ -26,3 +26,11 @@ LibreNote is released Under GPLv3 and made with [Meteor](https://www.meteor.com)
 ###Note
 
 Librenote is in alpha stage. Wait for more awesomeness.
+
+## Self-Promotion
+
+Like librenote?  Star the repository on
+[GitHub](https://github.com/fsftn/librenote). if
+you're feeling especially charitable, follow [fsftn](http://fsftn.org) on
+[Twitter](http://twitter.com/fsftamilnadu) and
+[GitHub](https://github.com/fsftn).
