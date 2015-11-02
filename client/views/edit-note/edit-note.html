@@ -10,7 +10,7 @@
             </div>
 
             {{#if equals type "text"}}
-            <div contenteditable="true" id="edit-note-content"> {{content}}</div>
+            <div contenteditable="true" id="edit-note-content"> {{{content}}}</div>
             {{else}}
             <ul class="todo-list" id="edit-list">
               {{#each noteTodos _id}}

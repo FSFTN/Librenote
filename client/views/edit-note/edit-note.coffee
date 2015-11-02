@@ -16,7 +16,7 @@ Template.editNote.events
       lastModified: new Date()
     }
     if currentData.type is "text"
-      content = $('#edit-note-content').text().trim()
+      content = $('#edit-note-content').html()
       data.content = content
     Notes.update({_id: @._id}, {$set: data})
     $('#edit-modal').closeModal()

@@ -19,7 +19,7 @@ Template.newNote.events
     t.$('#text-note').focus()
 
   "input #text-note, blur #text-note": (e,t)->
-    text = t.$('#text-note').text().trim()
+    text = t.$('#text-note').html()
     if text is ""
       t.$('.text-placeholder').show()
     else
@@ -38,7 +38,7 @@ Template.newNote.events
       type = "todo"
       count = Todos.find({noteId: id}).count()
     else
-      content = t.$('#text-note').text().trim()
+      content = t.$('#text-note').html()
       id = new Mongo.ObjectID()._str
       type = "text"
       count = 0
